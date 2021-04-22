@@ -10,6 +10,10 @@ if [ ! -f "/var/data/miner/swarm_key" ]; then
   UPLOAD_KEY=1
 fi
 
+if [ ! -z $HELIUM_VERSION ]; then
+  miner upgrade $HELIUM_VERSION
+fi
+
 miner start && miner print_keys
 
 if [ ! -z $UPLOAD_KEY ] && [ -f "/var/data/miner/swarm_key" ]; then
