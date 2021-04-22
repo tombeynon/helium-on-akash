@@ -7,6 +7,7 @@ aws s3 cp s3://$S3_KEY_PATH /var/data/miner/swarm_key
 
 if [ ! -f "/var/data/miner/swarm_key" ]; then
   # Swarm key doesn't exist yet
+  echo "Swarm key will be uploaded to S3"
   UPLOAD_KEY=1
 fi
 
@@ -14,6 +15,7 @@ if [ ! -z $HELIUM_VERSION ]; then
   miner upgrade $HELIUM_VERSION
 fi
 
+echo "Starting miner..."
 miner start && miner print_keys
 
 if [ ! -z $UPLOAD_KEY ] && [ -f "/var/data/miner/swarm_key" ]; then

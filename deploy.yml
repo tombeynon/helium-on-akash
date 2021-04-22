@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   akash:
-    image: tombeynon/helium-on-akash:v0.0.1
+    image: tombeynon/helium-on-akash:v0.0.2
     env:
       - AWS_ACCESS_KEY=yourkey
       - AWS_SECRET_KEY=yoursecret
