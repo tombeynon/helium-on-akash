@@ -2,26 +2,26 @@
 version: "2.0"
 
 services:
-  akash:
-    image: tombeynon/helium-on-akash:v0.0.2
+  app:
+    image: tombeynon/helium-on-akash:v0.0.3
     env:
       - AWS_ACCESS_KEY=yourkey
       - AWS_SECRET_KEY=yoursecret
       - S3_KEY_PATH=bucket/miner/swarm_key
     expose:
       - port: 2154
-        as: 80
+        as: 2154
         to:
           - global: true
 
 profiles:
   compute:
-    akash:
+    app:
       resources:
         cpu:
-          units: 1
+          units: 2
         memory:
-          size: 2Gi
+          size: 4Gi
         storage:
           size: 32Gi
   placement:
@@ -32,12 +32,12 @@ profiles:
         anyOf:
           - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
       pricing:
-        akash:
+        app:
           denom: uakt
-          amount: 10
+          amount: 20
 
 deployment:
-  akash:
+  app:
     dcloud:
-      profile: akash
+      profile: app
       count: 1
