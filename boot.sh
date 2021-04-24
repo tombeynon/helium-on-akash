@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # Copy swarm_key from S3
+echo "Starting"
+printenv
 export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
 export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
 aws s3 cp s3://$S3_KEY_PATH /var/data/miner/swarm_key
