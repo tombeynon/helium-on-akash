@@ -28,4 +28,4 @@ if [ ! -z $UPLOAD_KEY ] && [ -f "/var/data/miner/swarm_key" ]; then
   aws s3 cp /var/data/miner/swarm_key s3://$S3_KEY_PATH
 fi
 
-tail -fn 500 /var/data/log/console.log
+tail -Fn 500 /var/data/log/console.log
