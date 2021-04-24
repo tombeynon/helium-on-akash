@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Copy swarm_key from S3
 echo "Starting"
