@@ -5,9 +5,9 @@ services:
   app:
     image: tombeynon/helium-on-akash:v0.0.3
     env:
-      - AWS_ACCESS_KEY=yourkey
-      - AWS_SECRET_KEY=yoursecret
-      - S3_KEY_PATH=bucket/miner/swarm_key
+      - AWS_ACCESS_KEY=mykey
+      - AWS_SECRET_KEY=mysecret
+      - S3_KEY_PATH=mybucket/miner1/swarm_key
     expose:
       - port: 2154
         as: 2154
