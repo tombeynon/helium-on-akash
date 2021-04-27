@@ -6,8 +6,6 @@ ENV AWS_ACCESS_KEY=yourkey
 ENV AWS_SECRET_KEY=yoursecret
 ENV S3_KEY_PATH=bucket/miner/swarm_key
 
-ENV NAT_EXTERNAL_PORT 2154
-
 ENV AWSCLI_VERSION "1.14.10"
 
 RUN apk add --update \

@@ -5,6 +5,11 @@ echo "Starting"
 export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY
 export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_KEY
 
+# Set external port if Akash 2154 is mapped
+if [ ! -z $AKASH_PORT_2154_EXTERNAL_PORT ]; then
+  export NAT_EXTERNAL_PORT=$AKASH_PORT_2154_EXTERNAL_PORT
+fi
+
 # Copy swarm_key from S3 (ignore 404)
 aws s3 cp s3://$S3_KEY_PATH /var/data/miner/swarm_key
 
