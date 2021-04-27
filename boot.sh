@@ -10,6 +10,12 @@ if [ ! -z $AKASH_PORT_2154_EXTERNAL_PORT ]; then
   export NAT_EXTERNAL_PORT=$AKASH_PORT_2154_EXTERNAL_PORT
 fi
 
+if [ ! -z $AKASH_PORT_2154_TCP_ADDR ]; then
+  export NAT_EXTERNAL_IP=$AKASH_PORT_2154_TCP_ADDR
+fi
+
+printenv
+
 # Copy swarm_key from S3 (ignore 404)
 aws s3 cp s3://$S3_KEY_PATH /var/data/miner/swarm_key
 
